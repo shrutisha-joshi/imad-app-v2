@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 
 var articles = {
-    articleOne: {
+    'article-one': {
         title: 'Shrutisha | Article one',
         heading: 'Article one',
         date: 'Feb 26 2017',
@@ -25,7 +25,7 @@ var articles = {
                 but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
             </p>`
 },
-    articleTwo: {
+    'article-two': {
         title: 'Shrutisha | Article two',
         heading: 'Article two',
         date: 'Feb 27 2017',
@@ -42,7 +42,7 @@ var articles = {
                 hi, this is my second webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
                 but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
             </p>`},
-    articleThree: {
+    'article-Three': {
         title: 'Shrutisha | Article Three',
         heading: 'Article Three',
         date: 'Feb 28 2017',
