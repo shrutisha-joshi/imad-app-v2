@@ -6,24 +6,62 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var articleOne = {
-    title: 'Shrutisha | Article one',
-    heading: 'Article one',
-    date: 'Feb 26 2017',
-    content: `        
-        <p>
-            hi, this is my first webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
-            but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
-        </p>
-        <p>
-            hi, this is my first webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
-            but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
-        </p>
-        <p>
-            hi, this is my first webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
-            but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
-        </p>`
+var articles = {
+    articleOne: {
+        title: 'Shrutisha | Article one',
+        heading: 'Article one',
+        date: 'Feb 26 2017',
+        content: `        
+            <p>
+                hi, this is my first webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
+                but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
+            </p>
+            <p>
+                hi, this is my first webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
+                but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
+            </p>
+            <p>
+                hi, this is my first webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
+                but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
+            </p>`
+},
+    articleTwo: {
+        title: 'Shrutisha | Article two',
+        heading: 'Article two',
+        date: 'Feb 27 2017',
+        content: `        
+            <p>
+                hi, this is my second webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
+                but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
+            </p>
+            <p>
+                hi, this is my second webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
+                but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
+            </p>
+            <p>
+                hi, this is my second webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
+                but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
+            </p>`},
+    articleThree: {
+        title: 'Shrutisha | Article Three',
+        heading: 'Article Three',
+        date: 'Feb 28 2017',
+        content: `        
+            <p>
+                hi, this is my three webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
+                but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
+            </p>
+            <p>
+                hi, this is my three webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
+                but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
+            </p>
+            <p>
+                hi, this is my three webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
+                but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
+            </p>`
+    }
 };
+
 function createTemplate(data){
      var title = data.title;
      var date = data.date;
@@ -56,11 +94,15 @@ function createTemplate(data){
     `;
     return htmlTemplate;
 }
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article-one', function (req, res){
-  res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res){
+  //articleName === article-one
+  //articles[articleName] == {} content object for article-one
+  var articleName = req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 app.get('/article-two', function (req, res){
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
