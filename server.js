@@ -42,7 +42,7 @@ var articles = {
                 hi, this is my second webpage and im so excitef]d that im writing anything and also nervous that will i be able to learn anything.<br>
                 but i know myself, i will definely learn and apply everything since <b>I am the best</b>.
             </p>`},
-    'article-Three': {
+    'article-three': {
         title: 'Shrutisha | Article Three',
         heading: 'Article Three',
         date: 'Feb 28 2017',
