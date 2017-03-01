@@ -28,6 +28,7 @@ body {
             padding-top: 50;
         }
 .comm{
-       max-width: 23000px;
-       max-height: 23000px;
+        width: 500px;
+        height: 80px;
+        font-family: arial;
 }        
