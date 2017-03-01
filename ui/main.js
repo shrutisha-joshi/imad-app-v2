@@ -3,9 +3,9 @@ var button = document.getElementById('counter');
 
 button.onclick = function(){
     //create request object
-    var request=new XMLHttpRequest();
+    var request= new XMLHttpRequest();
     
-    //capture the status
+    //capture the status and store it in a variable
     request.onreadystatechange = function(){
       if (request.readyState === XMLHttpRequest.DONE ){
           if (request.status===200){
@@ -16,8 +16,6 @@ button.onclick = function(){
       }//not done
         
     };
-    //render the variable in the correct span
-    counter=counter+1;
     //make a request
     request.open('GET','http://shrutisha-joshi.imad.hasura-app.io/counter',true);
     request.send(null);
