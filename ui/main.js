@@ -22,9 +22,9 @@ button.onclick = function(){
 };
 //submit name
 var nameInput=document.getElementById("name");
-var name=nameInput.value;
-var submit=document.getElementById("submit_btn");
-submit.onclick()=function(){
+var name =nameInput.value;
+var submit =document.getElementById("submit_btn");
+submit.onclick =function(){
    //make the request to the server
    //capture the list of names and render it as a list
    var names=['name1','name2','name3','name4'];
